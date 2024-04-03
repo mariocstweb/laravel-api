@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\TypeProjectController;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::apiResource('projects', ProjectController::class);
 // Rotta per il singolo progetto
 Route::get('projects/{id}', [ProjectController::class, 'show']);
+
+Route::get('types/{id}/projects', TypeProjectController::class);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
