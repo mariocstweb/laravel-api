@@ -22,4 +22,16 @@ class TypeProjectController extends Controller
 
         return response()->json(['projects' => $projects, 'label' => $type->label]);
     }
+    // public function __invoke(string $id)
+    // {
+    //     $type = Type::find($id);
+    //     if (!$type) {
+    //         return response()->json(['error' => 'Tipo non trovato'], 404);
+    //     }
+
+    //     // Carica i progetti associati al tipo
+    //     $projects = $type->projects()->with('technologies')->get();
+
+    //     return response()->json(['projects' => $projects, 'label' => $type->label]);
+    // }
 }
