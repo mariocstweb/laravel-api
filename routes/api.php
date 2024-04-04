@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\MailController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\TypeProjectController;
 use App\Models\Project;
@@ -23,6 +24,7 @@ Route::get('projects/{id}', [ProjectController::class, 'show']);
 
 Route::get('types/{id}/projects', TypeProjectController::class);
 
+Route::post('/contact-message', [MailController::class, 'message']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
